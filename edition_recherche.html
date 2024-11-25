@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boîte Jean Renaudie</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="img/elements/curseur.png">
+  <!-- meta description -->
+  <meta name="description" content="Arsène GRIVEAU">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <img src="img/elements/saxo.png" alt="Image au premier plan" id="saxo-vroum" class="saxo-vroum">
+  <img src="img/elements/arsenepoint.png" alt="Image au premier plan" id="arsenepoint" class="arsenepoint">
+
+  <header class="header">
+    <!-- https://jenseign.com/le-h1-logo/ -->
+    <h1 class="title"><a href="index.html">A<span>rsène </span>G<span>riveau</span></a></h1>
+
+    <nav class="header-nav">
+      <a href="a-propos.html">à propos</a>
+      <a href="https://instagram.com/91lup1">instagram</a>
+    </nav>
+  </header>
+
+  <div class="projetpageperso">
+    <a class="projet">
+      <h2>Éditions "Poubelle"</h2>
+      <div class="grid-container">
+        <div class="grid-item image">
+          <img src="img/edition-recherche/edition_recherche1.jpg" alt="Image du projet">
+          <img src="img/edition-recherche/edition_recherche_test1.jpg" alt="Image du projet">
+
+        </div>
+        <div class="grid-item text">
+          <p>Description du projet.Le soleil se levait à peine sur le petit village côtier de Mirabella. La lumière dorée illuminait les toits rouges, plongeant les ruelles pavées dans une douce chaleur matinale. Au port, les bateaux de pêche oscillaient lentement, encore ensommeillés après une nuit de navigation. Les mouettes, elles, étaient déjà éveillées, planant au-dessus des eaux calmes en quête de poissons égarés.
+
+            Dans une petite maison blanchie à la chaux, Elena, une jeune artisane, terminait une de ses créations : un pendentif en forme de coquillage, orné de perles qu’elle avait elle-même récoltées. Chaque bijou qu’elle façonnait portait une histoire, un morceau d’âme, un reflet des murmures de l’océan. Elle rêvait de voir un jour ses œuvres voyager au-delà des horizons, racontant les légendes de Mirabella aux gens des quatre coins du monde.
+            
+            Au marché, les premiers marchands installaient leurs étals, disposant soigneusement fruits, légumes et poissons frais. L’odeur du pain chaud, qui venait de la boulangerie du coin, se mêlait à celle de la mer, créant un parfum unique, celui de l’aube à Mirabella. Les habitants, habitués, saluaient Elena avec des sourires bienveillants. Pour eux, elle n’était pas seulement une créatrice de bijoux, mais une conteuse silencieuse, capable de capturer la beauté de leur village dans de minuscules trésors.
+            </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    const projets = document.querySelectorAll('.projet');
+    projets.forEach(projet => {
+      projet.addEventListener('mouseover', () => {
+        projets.forEach(p => p.classList.add('unactive'));
+        projet.classList.remove('unactive');
+      });
+      projet.addEventListener('mouseout', () => {
+        projets.forEach(p => p.classList.remove('unactive'));
+      });
+    });
+  </script>
+  <h2 id="hidden-text" class="hidden-text">La terre des légendes</h2>
+  <script src="script.js"></script>
+
+</body>
+</html>

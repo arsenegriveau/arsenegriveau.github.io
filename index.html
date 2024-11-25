@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- favicon -->
+  <link rel="icon" type="image/png" href="img/elements/curseur.png">
+  <!-- meta description -->
+  <meta name="description" content="Arsène GRIVEAU">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <link rel="icon" type="image/png" href="img/elements/curseur.png">
+  <img src="img/elements/saxo.png" alt="Image au premier plan" id="saxo-vroum" class="saxo-vroum">
+  <img src="img/elements/arsenepoint.png" alt="Image au premier plan" id="arsenepoint" class="arsenepoint">
+  <img src="img/elements/arsenepouce.png" alt="Image au premier plan" id="arsenepouce" class="arsenepouce">
+
+  <header class="header">
+    <!-- https://jenseign.com/le-h1-logo/ -->
+    <h1 class="title"><a href="index.html">A<span>rsène </span>G<span>riveau</span></a></h1>
+
+    <nav class="header-nav">
+      <a href="a-propos.html">à propos</a>
+      <a href="https://instagram.com/91lup1">instagram</a>
+    </nav>
+  </header>
+
+  <div class="projets">
+    <link rel="icon" type="image/png" href="img/elements/curseur.png">
+    <a href="coffret.html" class="projet">
+      <h2>Souris test</h2>
+      <img src="img/souris1.jpg" alt="souris1.jpg" class="anim-image">    
+    </a>
+    <a href="edition_recherche.html" class="projet">
+      <h2>Éditions "poubelle"</h2>
+      <img src="img/edition-recherche/edition_recherche1.jpg" alt="livres">
+    </a>
+    <a href="coffret_jean_renaudie.html" class="projet">
+      <h2>Coffret Jean Renaudie</h2>
+      <img src="img/coffret_renaudie/couverture_edition1_JR.jpg" alt="Musée">
+    </a>
+    <a href="restaurant.html" class="projet">
+      <h2>Restaurant</h2>
+      <img src="img/coffret_renaudie/doubleposter_renaudie.jpg" alt="Restaurant">
+    </a>
+    <a href="voyage.html" class="projet">
+      <h2>Voyage</h2>
+      <img src="img/voyage.jpg" alt="Voyage">
+    </a>
+    <a href="livres.html" class="projet">
+      <h2>Livres</h2>
+      <img src="img/livres.jpg" alt="livres">
+    </a>
+    <a href="musee.html" class="projet">
+      <h2>Musée</h2>
+      <img src="img/musee.jpg" alt="Musée">
+    </a>
+    <a href="restaurant.html" class="projet">
+      <h2>Restaurant</h2>
+      <img src="img/restaurant.jpg" alt="Restaurant">
+    </a>
+    <a href="voyage.html" class="projet">
+      <h2>Voyage</h2>
+      <img src="img/voyage.jpg" alt="Voyage">
+    </a>
+    <a href="livres.html" class="projet">
+      <h2>Livres</h2>
+      <img src="img/livres.jpg" alt="livres">
+    </a>
+    <a href="musee.html" class="projet">
+      <h2>Musée</h2>
+      <img src="img/musee.jpg" alt="Musée">
+    </a>
+    <a href="restaurant.html" class="projet">
+      <h2>Restaurant</h2>
+      <img src="img/restaurant.jpg" alt="Restaurant">
+    </a>
+    <a href="voyage.html" class="projet">
+      <h2>Voyage</h2>
+      <img src="img/voyage.jpg" alt="Voyage">
+    </a>
+    <a href="livres.html" class="projet">
+      <h2>Livres</h2>
+      <img src="img/livres.jpg" alt="livres">
+    </a>
+    <a href="musee.html" class="projet">
+      <h2>Musée</h2>
+      <img src="img/musee.jpg" alt="Musée">
+    </a>
+    <a href="restaurant.html" class="projet">
+      <h2>Restaurant</h2>
+      <img src="img/restaurant.jpg" alt="Restaurant">
+    </a>
+    <a href="pong.html" class="projet">
+      <h2>Voyage</h2>
+      <img src="img/voyage.jpg" alt="Voyage">
+    </a>
+  </div>
+  <script src="script.js"></script>
+
+  <div class="color-buttons">
+    <button class="color-button" data-color="blue" style="background-color: blue;"></button>
+    <button class="color-button" data-color="red" style="background-color: red;"></button>
+    <button class="color-button" data-color="lime" style="background-color: lime;"></button>
+    <button class="color-button" data-color="black" style="background-color: black;"></button>
+  </div>
+
+  <script src="script.js"></script>
+
+<script>
+  const projets = document.querySelectorAll('.projet');
+  projets.forEach(projet => {
+    projet.addEventListener('mouseover', () => {
+      projets.forEach(p => p.classList.add('unactive'));
+      projet.classList.remove('unactive');
+    });
+    projet.addEventListener('mouseout', () => {
+      projets.forEach(p => p.classList.remove('unactive'));
+    });
+  });
+
+  const colorButtons = document.querySelectorAll('.color-button');
+
+  colorButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const color = button.getAttribute('data-color');
+      document.body.style.backgroundColor = color;
+
+      if (color === 'black') {
+        colorButtons.forEach(btn => btn.style.borderColor = 'white');
+      } else {
+        colorButtons.forEach(btn => btn.style.borderColor = 'black');
+      }
+    });
+  });
+</script>
+<h2 id="hidden-text" class="hidden-text">La terre des légendes</h2>
+  <script src="script.js"></script>
+</body>
+</html>
