@@ -13,13 +13,16 @@
 
 
 body{
-    background-color:  blue;
     font-family: Arial, sans-serif;
     margin: 0; /* pour éviter les marges par défaut du navigateur */
     line-height: 1.5; /* hauteur de ligne pour la lecture à l'écran*/
     cursor: url('img/elements/curseur.png') 16 16, auto;
     overflow-x: hidden; /* Masque tout débordement */
     width: 100vw;
+    background-image: url('img/elements/fond.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     }
 
 img{
@@ -40,6 +43,7 @@ a{
 h2{
   font-family: 'Press Start 2P', sans-serif;
   font-size: 16px;
+  color: white;
 }
 
 p{
@@ -47,6 +51,15 @@ p{
   margin-left: 10px;
   margin-right: 10px;
   font-size: 16px;
+  color:white;
+}
+
+li{
+  font-size: 16px;
+  color:white;
+  text-align: left;
+  margin-right:10px;
+  margin-top: 10px;
 }
 
 .header{
@@ -54,12 +67,15 @@ p{
   grid-template-columns: max-content max-content; /* 2 colonnes de largeur minimale */
   justify-content: space-between; /* pour espacer les éléments */
   align-items: center; /* pour centrer verticalement */
-  background-color: white;
-  border : 1px solid #000;
+  background-color: lightgray;
+  border-top: 3px solid white;
+  border-bottom: 3px solid black;
   text-decoration: none;
   padding:0 24px; 
   position: sticky; /* pour que le header reste en haut de la page */
   top:0; /* pour que le header reste en haut de la page */
+  z-index: 1000;
+
 }
 
 .header h1{
@@ -137,9 +153,31 @@ p{
 }
 
 .projet{
-  background-color: white;
-  border: #000 1px solid;
-  margin: -1px;
+  background-color: blue;
+  border-top: 3px solid lightblue;
+  border-bottom: 3px solid black;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s; /* pour animer les changements */
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+.projet:hover{
+  box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+  z-index: 10;
+}
+
+
+.projet-pageperso{
+  background-color: blue;
+  border-top: 3px solid lightblue;
+  border-bottom: 3px solid black;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
   text-align: center;
   color: #000;
   text-decoration: none;
@@ -149,16 +187,12 @@ p{
   opacity: 1;
 }
 
-.projet:hover{
-  box-shadow: 0 0 50px rgba(0,0,0,1);
-}
 
 .projet h2{
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  border-bottom: 1px solid black;
-  flex: 1;
+  border-bottom: 3px solid black;  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -279,6 +313,71 @@ p{
   flex-direction: column;
 }
 
+.slider-1 {
+  width: 100%;
+  overflow: hidden;
+
+}
+.slider-1 .slider {
+  animation: slider-1 15s infinite ease-in-out;
+  display: flex;
+
+  /* Si on veut faire glisser vers la droite */
+  /* Il faut aussi changer l'animation(transform) en valeurs positives */
+  /* flex-direction: row-reverse; */
+}
+
+
+/* 
+   5% par transition, nombre choisi arbitrairement.
+
+   reste divisé par nb de pauses
+   80(%) / 4 = 20(%) par pause
+*/
+
+@keyframes slider-1 {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+  75%,
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+} 
+
+.marquee-text {
+  display: inline-block;
+  font-family: Avara;
+  font-size: 2em;
+  color: #00ff0d;
+  animation: marquee 8s linear infinite;
+}
+
+/* Animation pour le défilement */
+@keyframes marquee {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+
+
+
 /* Style de la scrollbar */
 ::-webkit-scrollbar {
   width: 12px; /* Largeur de la scrollbar */
@@ -304,25 +403,7 @@ p{
 /* Changer la couleur de la scrollbar au survol */
 ::-webkit-scrollbar-thumb:hover {
   background: black; /* Couleur de la scrollbar au survol */
-
 }
-
-.color-buttons {
-  display: flex;
-  justify-content: left;
- margin-top: 0px
-}
-
-.color-button {
-  width: 20px;
-  height: 20px;
-
-  margin-bottom: 0px;
-  border: 1px solid black;
-  cursor: url('img/elements/curseur.png') 16 16, auto;
-
-}
-
 .hidden-text {
   display: none;
   color: white;

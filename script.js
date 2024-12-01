@@ -48,16 +48,6 @@ window.addEventListener('scroll', function() {
     image.style.left = `${newLeftPosition}%`;
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const colorButtons = document.querySelectorAll('.color-button');
-
-    colorButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const color = button.getAttribute('data-color');
-            document.body.style.backgroundColor = color;
-        });
-    });
-});
 let isNinePressed = false;
 let isOnePressed = false;
 
