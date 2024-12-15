@@ -1,0 +1,439 @@
+*{
+    box-sizing: border-box; /* pour que les padding et margin ne modifient pas la taille de l'élément */
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+/*BAlISE*/
+
+
+
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0; /* pour éviter les marges par défaut du navigateur */
+    line-height: 1.5; /* hauteur de ligne pour la lecture à l'écran*/
+    cursor: url('img/elements/curseur.png') 16 16, auto;
+    overflow-x: hidden; /* Masque tout débordement */
+    width: 100vw;
+    background-image: url('img/elements/fond.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
+
+img{
+    max-width: 100%; /* pour que les images ne dépassent pas de leur conteneur */
+    height: auto; /* pour garder le ratio de l'image */
+    display: block;
+}
+
+figure{
+    margin: 0; /* pour éviter les marges par défaut du navigateur */
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+h2{
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+p{
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  color:black;
+}
+
+li{
+  font-size: 16px;
+  color:black;
+  text-align: left;
+  margin-right:10px;
+  margin-top: 0px;
+  vertical-align: top;
+}
+ul{
+  margin-right: 10px;
+  margin-top: 00px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.header{
+  display: grid; /* pour pouvoir utiliser grid-template-columns */
+  grid-template-columns: max-content max-content; /* 2 colonnes de largeur minimale */
+  justify-content: space-between; /* pour espacer les éléments */
+  align-items: center; /* pour centrer verticalement */
+  background: linear-gradient(to top, rgb(156, 156, 156), #eeeeee);
+  border-top: 3px solid white;
+  border-bottom: 3px solid black;
+  text-decoration: none;
+  padding:0 24px; 
+  position: sticky; /* pour que le header reste en haut de la page */
+  top:0; /* pour que le header reste en haut de la page */
+  z-index: 1000;
+
+}
+
+.header h1{
+  margin: 6px 0; /* pour éviter les marges par défaut du navigateur */
+  text-decoration: none;
+  font: 1.5em 'Press Start 2P', sans-serif;
+  z-index: 1000;
+}
+.header h1:hover{
+  animation: textedéformation 0.2s forwards; /* pour animer le logo en survol et garder la déformation */
+}
+
+@keyframes textedéformation {
+  0%  { transform: scale(1, 1); }
+  20% { transform: scale(1., 1,4); }
+  40% { transform: scale(1, 1.8); }
+  60% { transform: scale(1, 2,2); }
+  80% { transform: scale(1, 2.6); }
+  100% { transform: scale(1, 3); }
+}
+
+.header-nav{
+  display: grid;
+  grid-template-columns: max-content max-content ;
+  gap:0 24px ;
+ 
+}
+
+.header-nav a{
+  color:#000000;
+  text-decoration: none;
+}
+
+.header-nav a:hover {
+  animation: textedéformation 0.2s forwards; /* pour animer le logo en survol et garder la déformation */
+}
+
+@keyframes textedéformation {
+  0%  { transform: scale(1, 1); }
+  20% { transform: scale(1., 1,4); }
+  40% { transform: scale(1, 1.8); }
+  60% { transform: scale(1, 2,2); }
+  80% { transform: scale(1, 2.6); }
+  100% { transform: scale(1, 3); }
+}
+
+@keyframes rainbow {
+  0% { background-position:  0 0; }
+  100% { background-position: 0px 200px; }
+}
+
+.title span{
+  display: none;
+}
+@media (min-width: 600px) {
+  .title span{
+    display: inline;
+  }
+}
+
+
+.projets{
+  display: grid;
+  max-width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, 224px); /* auto-fit pour que le nombre d'éléments s'adaptent à la largeur du conteneur 
+  320px -> 1 élément
+  480px -> 2 éléments
+  720px -> 3 éléments
+  */
+  gap: 0px;
+  padding: 24px;
+  justify-content: center;
+  grid-auto-flow: row dense;
+}
+
+.projet{
+  background: linear-gradient(to top, rgb(0, 0, 255)88%, rgb(147, 147, 255));
+  border-top: 3px solid lightblue;
+  border-bottom: 3px solid black;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s; /* pour animer les changements */
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+.projet:hover{
+  box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+  z-index: 10;
+}
+
+.projet img {
+  transition: transform 0.5s ease;
+}
+
+.projet:hover img {
+  transform: rotate(360deg);
+}
+
+
+.projet-pageperso{
+  background: linear-gradient(to top, rgb(0, 0, 255)99%, rgb(147, 147, 255));
+  border-top: 3px solid lightblue;
+  border-bottom: 3px solid black;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s; /* pour animer les changements */
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+
+
+.projet h2{
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  border-bottom: 3px solid black;  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.page-projet{
+  display: grid;
+  max-width: 632px; /* 480*2+24(gap) + 24+24(padding droite + gauche) */
+  margin: 0 auto;
+  background: black;
+  grid-template-columns: repeat(auto-fill, minmax(320px,480px));
+  gap: 24px;
+  padding: 24px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.page-projets .description{
+  max-width: 480px;
+}
+
+.projet-data{
+  align-self: end; /* pour aligner les éléments en bas dans la grille parent !!! */
+
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  margin-bottom: 12px;
+  border-top: 1px solid #ddd; 
+}
+
+.projet-data>*{
+  margin: 0;
+  padding-right: 12px;
+  font-size: 1em;
+  line-height: 3em;
+  border-bottom: 1px solid black;
+}
+
+.projet.unactive{
+  z-index: -1; /* pour repeindre */
+}
+
+.anim-image {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+/* les éléments coolos */
+
+
+
+.saxo-vroum {
+  position: fixed;
+  bottom: -40px;
+  left: 0px;
+  width: 200px; /* Définissez la largeur fixe souhaitée */
+  height: 150px; /* Définissez la hauteur fixe souhaitée */
+  z-index: 1000; /* Assurez-vous que ce z-index est supérieur à celui des autres éléments */
+}
+
+.arsenepoint {
+  position: absolute;
+  rotate: -20deg;
+  right: calc(20vw - 400px);
+  bottom: -20%;
+  z-index: 1000; /* Assurez-vous que ce z-index est supérieur à celui des autres éléments */
+  width: 30vw;
+  pointer-events: none;
+  max-width: 100%; /* Limite la largeur maximale à celle du conteneur parent */
+}
+
+.arsenepouce{
+  position: absolute;
+  left: calc(20vw - 400px);
+  bottom: -50vw;
+  z-index: 1000; /* Assurez-vous que ce z-index est supérieur à celui des autres éléments */
+  width: 30vw;
+  pointer-events: none;
+  max-width: 100%; /* Limite la largeur maximale à celle du conteneur parent */
+}
+
+
+.projetpageperso{
+  display: flex;
+  gap: 0px;
+  padding: 24px;
+  justify-content: center;
+}
+
+.grid-container {
+  display: flex;
+  border: #000 1px solid;
+  margin: -1px;
+  max-width: 1000px;
+
+}
+@media (max-width: 600px) {
+  .grid-container {
+    display: block; /* Désactive le flex lorsque la largeur est inférieure à 320px */
+  }
+}
+
+.grid-item.image {
+  flex: 1; /* La colonne de gauche prend deux tiers de l'espace */
+  border: #000 1px solid;
+  margin: -1px;
+}
+
+.grid-item.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-item.text {
+  flex: 1; /* La colonne de droite prend un tiers de l'espace */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pour espacer les éléments */
+  align-items: center; /* pour centrer verticalement */
+  background-color: lightgray;
+  border-top: 3px solid white;
+  border-bottom: 2px solid black;
+}
+
+.slider-1 {
+  width: 100%;
+  overflow: hidden;
+
+}
+.slider-1 .slider {
+  animation: slider-1 15s infinite ease-in-out;
+  display: flex;
+
+  /* Si on veut faire glisser vers la droite */
+  /* Il faut aussi changer l'animation(transform) en valeurs positives */
+  /* flex-direction: row-reverse; */
+}
+
+
+/* 
+   5% par transition, nombre choisi arbitrairement.
+
+   reste divisé par nb de pauses
+   80(%) / 4 = 20(%) par pause
+*/
+
+@keyframes slider-1 {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+  75%,
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+} 
+
+.marquee-text {
+  display: inline-block;
+  font-family: Avara;
+  font-size: 2em;
+  color: #00ff0d;
+  animation: marquee 8s linear infinite;
+}
+
+/* Animation pour le défilement */
+@keyframes marquee {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+
+
+
+/* Style de la scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Largeur de la scrollbar */
+  z-index: 998;
+  margin: -1;
+}
+
+/* Style de la partie mobile de la scrollbar */
+::-webkit-scrollbar-thumb {
+  background: blue; /* Couleur de la scrollbar */
+  border-radius: 6px; /* Arrondir les coins de la scrollbar */
+  max-height: 10px; /* Longueur minimale de la partie mobile de la scrollbar */
+  border: 1px solid;
+}
+
+/* Style de la piste de la scrollbar */
+::-webkit-scrollbar-track {
+  background: white; /* Couleur de la piste */
+  border: 1px solid; /* Bordure de la scrollbar */
+  margin: -1px;
+}
+
+/* Changer la couleur de la scrollbar au survol */
+::-webkit-scrollbar-thumb:hover {
+  background: black; /* Couleur de la scrollbar au survol */
+}
+.hidden-text {
+  display: none;
+  color: white;
+  background-color: black;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10000; /* Assurez-vous que cet élément est au-dessus de tous les autres */
+}

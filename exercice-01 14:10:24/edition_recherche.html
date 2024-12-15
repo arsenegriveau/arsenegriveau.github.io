@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Éditions poubelles</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="img/elements/curseur.png">
+  <!-- meta description -->
+  <meta name="description" content="Arsène GRIVEAU">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <img src="img/elements/saxo.png" alt="Image au premier plan" id="saxo-vroum" class="saxo-vroum">
+  <img src="img/elements/arsenepoint.png" alt="Image au premier plan" id="arsenepoint" class="arsenepoint">
+
+  <header class="header">
+    <!-- https://jenseign.com/le-h1-logo/ -->
+    <h1 class="title"><a href="index.html">A<span>rsène </span>G<span>riveau</span></a></h1>
+
+    <nav class="header-nav">
+      <a href="a-propos.html">à propos</a>
+      <a href="https://instagram.com/91lup1">instagram</a>
+    </nav>
+  </header>
+
+  <div class="projetpageperso">
+    <a class="projet-pageperso">
+      <h2>Éditions «&thinsp;poubelles&thinsp;»</h2>
+      <div class="grid-container">
+        <div class="grid-item image">
+          <img src="img/edition-recherche/edition_recherches1.jpg" alt="Image du projet">
+          <img src="img/edition-recherche/edition_recherches2.jpg" alt="Image du projet">
+
+        </div>
+        <div class="grid-item text">
+          <p>Des éditions issues de papiers, de cartons, tests d'impressions et autres surfaces msies à la poubelle. 
+            La reliure est une simple colle chaude et les différents éléments récupérés sont juste mis aléatoirement dans un objectif
+            de recherche des formes, des transparences et des couleurs au fil du hasard.
+            <ul>
+              <li>Édition #1 <em>(18x28,3cm)</em></li>
+              <li>Édition #2 <em>(20,5x15cm)</em></li>
+              <li>Édition #3 <em>(20,5x23,5)</em></li>
+            </ul>
+            </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    const projets = document.querySelectorAll('.projet');
+    projets.forEach(projet => {
+      projet.addEventListener('mouseover', () => {
+        projets.forEach(p => p.classList.add('unactive'));
+        projet.classList.remove('unactive');
+      });
+      projet.addEventListener('mouseout', () => {
+        projets.forEach(p => p.classList.remove('unactive'));
+      });
+    });
+  </script>
+  <h2 id="hidden-text" class="hidden-text">La terre des légendes</h2>
+  <script src="script.js"></script>
+
+</body>
+</html>
