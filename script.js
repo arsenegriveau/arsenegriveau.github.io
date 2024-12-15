@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.anim-image');
-    const imageSources = [
-        'img/souris1.jpg',
-        'img/souris2.jpg',
-        'img/souris3.jpg',
-        'img/souris4.jpg',
-        'img/souris5.jpg',
-        'img/souris6.jpg',
-        'img/souris7.jpg',
-        'img/souris8.jpg'
-    ];
-
     images.forEach(image => {
         image.addEventListener('mouseover', function() {
             let index = 0;
@@ -76,3 +64,4 @@ document.addEventListener('keyup', function(event) {
         isOnePressed = false;
     }
 });
+

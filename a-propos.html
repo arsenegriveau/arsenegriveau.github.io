@@ -25,3 +25,37 @@
       <a href="https://instagram.com/91lup1">instagram</a>
     </nav>
   </header>
+
+  <div class="projetpageperso">
+    <a class="projet-pageperso">
+      <h2>À propos</h2>
+      <div class="grid-item text">
+        <p>Je m'appelle Arsène Griveau. Je suis étudiant à l'Ésad d'Amiens en design graphique. Vous avez ici un aperçu de mes productions.
+          <br>
+          <br>CONTACT:<li>mail&thinsp;: arsene.griveau@gmail.com</li>
+          <li>instagram&thinsp;: 91lup1</li>
+
+          </p>
+      </div>
+    </div>
+  </a>
+</div>
+
+      <script src="script.js"></script>
+      <script>
+        const projets = document.querySelectorAll('.projet');
+        projets.forEach(projet => {
+          projet.addEventListener('mouseover', () => {
+            projets.forEach(p => p.classList.add('unactive'));
+            projet.classList.remove('unactive');
+          });
+          projet.addEventListener('mouseout', () => {
+            projets.forEach(p => p.classList.remove('unactive'));
+          });
+        });
+      </script>
+      <h2 id="hidden-text" class="hidden-text">La terre des légendes</h2>
+      <script src="script.js"></script>
+    
+    </body>
+    </html>
