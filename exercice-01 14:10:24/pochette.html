@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pochettes</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="img/elements/curseur.png">
+  <!-- meta description -->
+  <meta name="description" content="Arsène GRIVEAU">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src="img/elements/saxo.png" alt="Image au premier plan" id="saxo-vroum" class="saxo-vroum">
+    <header class="header">
+      <!-- https://jenseign.com/le-h1-logo/ -->
+      <h1 class="title"><a href="index.html">A<span>rsène </span>G<span>riveau</span></a></h1>
+      <nav class="header-nav">
+        <a href="a-propos.html">à propos</a>
+        <a href="https://instagram.com/91lup1">instagram</a>
+      </nav>
+    </header>
+  
+    <div class="projetpageperso">
+      <a class="projet-pageperso">
+        <h2>Pochettes</h2>
+        <div class="grid-container">
+          <div class="grid-item image">
+            <img src="img/cover/cover_neuj.jpg" alt="Image du projet">
+            <img src="img/cover/cover_neuj2.jpg" alt="Image du projet">
+        </div>
+          
+        
+        <div class="grid-item text">
+            <p>Série de pochettes pour des singles de rap réalisé pour Neuj en 2023. Les pochettes jouent sur un mélange de différentes textures et médiums (fils, peinture acrylique, poscas, stylos...)
+                </p>
+            <ul>
+                <li>Pochette #1 <em>(21x21cm)</em></li>
+                <li>Pochette #2 <em>(21x21cm)</em></li>
+            </ul>
+          </div>
+        </div>
+      </a>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const projets = document.querySelectorAll('.projet');
+      projets.forEach(projet => {
+        projet.addEventListener('mouseover', () => {
+          projets.forEach(p => p.classList.add('unactive'));
+          projet.classList.remove('unactive');
+        });
+        projet.addEventListener('mouseout', () => {
+          projets.forEach(p => p.classList.remove('unactive'));
+        });
+      });
+    </script>
+    <h2 id="hidden-text" class="hidden-text">La terre des légendes</h2>
+    <script src="script.js"></script>
+  
+  </body>
+  </html>
